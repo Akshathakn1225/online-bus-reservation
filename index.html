@@ -5,57 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Bus Reservation</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        form { max-width: 400px; margin: auto; background: #f4f4f4; padding: 20px; border-radius: 10px; }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #000; color: white; }
+        .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,0,0,0.5); color: black; }
+        h2 { color: red; }
         label, input, select { display: block; width: 100%; margin-bottom: 10px; }
-        button { background: green; color: white; padding: 10px; border: none; cursor: pointer; }
-        #confirmation { display: none; color: green; font-weight: bold; }
+        button { background: red; color: white; padding: 10px; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background: darkred; }
+        #confirmation { display: none; color: green; font-weight: bold; margin-top: 15px; }
+        nav { background: red; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h2>Online Bus Reservation</h2>
-    <form id="bookingForm">
-        <label>Passenger Name:</label>
-        <input type="text" id="name" required>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Ticket</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
 
-        <label>Number of Seats:</label>
-        <input type="number" id="seats" min="1" required>
+    <div class="container">
+        <h2>Online Bus Reservation</h2>
+        <form id="bookingForm">
+            <label>Passenger Name:</label>
+            <input type="text" id="name" required>
 
-        <label>Date of Booking:</label>
-        <input type="date" id="date" required>
+            <label>Number of Seats:</label>
+            <input type="number" id="seats" min="1" required>
 
-        <label>From:</label>
-        <input type="text" id="from" required>
+            <label>Date of Booking:</label>
+            <input type="date" id="date" required>
 
-        <label>To:</label>
-        <input type="text" id="to" required>
+            <label>From:</label>
+            <input type="text" id="from" required>
 
-        <label>Type of Bus:</label>
-        <select id="busType" required>
-            <option>AC</option>
-            <option>Non-AC</option>
-            <option>Sleeper</option>
-            <option>Seater</option>
-        </select>
+            <label>To:</label>
+            <input type="text" id="to" required>
 
-        <label>Mode of Payment:</label>
-        <select id="paymentMode" required>
-            <option>GPay</option>
-            <option>PhonePe</option>
-            <option>Cash</option>
-            <option>Debit/Credit Card</option>
-        </select>
+            <label>Type of Bus:</label>
+            <select id="busType" required>
+                <option>AC</option>
+                <option>Non-AC</option>
+                <option>Sleeper</option>
+                <option>Seater</option>
+            </select>
 
-        <label>Contact Number:</label>
-        <input type="tel" id="contact" required>
+            <label>Mode of Payment:</label>
+            <select id="paymentMode" required>
+                <option>GPay</option>
+                <option>PhonePe</option>
+                <option>Cash</option>
+                <option>Debit/Credit Card</option>
+            </select>
 
-        <label>Email ID:</label>
-        <input type="email" id="email" required>
+            <label>Contact Number:</label>
+            <input type="tel" id="contact" required>
 
-        <button type="button" onclick="bookTicket()">Book Ticket</button>
-    </form>
+            <label>Email ID:</label>
+            <input type="email" id="email" required>
 
-    <p id="confirmation">Your ticket has been booked successfully!</p>
+            <button type="button" onclick="bookTicket()">Book Ticket</button>
+        </form>
+
+        <p id="confirmation">Your ticket has been booked successfully!</p>
+    </div>
 
     <script>
         function bookTicket() {
